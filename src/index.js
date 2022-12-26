@@ -4,17 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//REDUX SETUP
 import {configureStore} from '@reduxjs/toolkit'
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk'
 
-//REDUX SETUP
+
 
 
 
 
 export const store=configureStore({
-    reducer:rootReducer
+    reducer:rootReducer,
+    middleware:[thunk],
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
