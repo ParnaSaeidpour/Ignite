@@ -4,8 +4,8 @@ import { loadGames } from "../actions/gamesAction";
 
 //components
 
-import Game from "../components/Game";
-import {motion} from "framer-motion";
+import Games from "../components/Game";
+
 
 
 const Home=()=>{
@@ -26,7 +26,7 @@ const Home=()=>{
             <h2 className="xl:font-mono font-bold text-4xl pt-20 pb-20 pl-0 pr-0 my_text_red">Upcoming Games</h2>
                 <div className="grid gap-x-10 gap-y-20 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
                     {upcoming.map(game=>(
-                        <Game 
+                        <Games 
                         name={game.name}
                         released={game.released}
                         id={game.id}
@@ -41,7 +41,7 @@ const Home=()=>{
                 <h2 className="xl:font-mono font-bold text-4xl pt-20 pb-20 pl-0 pr-0">Popular Games</h2>
                 <div className="grid gap-x-10 gap-y-20 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                     {popular.map(game=>(
-                        <Game 
+                        <Games 
                         name={game.name}
                         released={game.released}
                         id={game.id}
@@ -56,7 +56,7 @@ const Home=()=>{
                 <h2 className="xl:font-mono font-bold text-4xl pt-20 pb-20 pl-0 pr-0">New Games</h2>
                 <div className="grid gap-x-10 gap-y-20 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                     {newGames.map(game=>(
-                        <Game 
+                        <Games 
                         name={game.name}
                         released={game.released}
                         id={game.id}
