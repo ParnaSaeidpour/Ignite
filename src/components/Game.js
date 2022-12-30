@@ -1,9 +1,24 @@
 import React from "react";
-import {motion} from "framer-motion"
 
-const Game=({name,released,image})=>{
+ 
+
+//Redux
+
+import { useDispatch } from "react-redux";
+import {loadDetail} from "../actions/detailAction"
+
+const Games=({name,released,image,id})=>{
+    //load Detail
+
+    const dispatch = useDispatch();
+    const loadDetailHandler =(e)=>{
+        dispatch(loadDetail(id));
+    }
+
+
+
     return(
-        <div className="shadow-2xl shadow-gray-400 text-center rounded-md overflow-hidden">
+        <div onClick={loadDetailHandler}  className="shadow-2xl shadow-gray-400 text-center rounded-md overflow-hidden">
             <h3 className="italic text-black pt-3 text-lg">{name}</h3>
             <p className="pt-3 text-sm">{released}</p>
             <img src={image} alt={name} className=" object-cover h-full"/>
@@ -11,4 +26,4 @@ const Game=({name,released,image})=>{
     )
 }
 
-export default Game
+export default Games
