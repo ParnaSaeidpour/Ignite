@@ -1,6 +1,7 @@
 const initState ={
     game:{platforms:[]},
-    screen:{results:[]}
+    screen:{results:[]},
+    isLoading:true
 }
 
 
@@ -11,9 +12,16 @@ const detailReducer =(state=initState, action)=>{
             return{
                 ...state,
                 game: action.payload.game,
-                screen: action.payload.screen
+                screen: action.payload.screen,
+                isLoading:false,
 
             }
+        case "LODING_DETAIL":
+            return{
+                ...state,
+                isLoading:true,
+            }
+
 
         default:
             return{...state}
