@@ -5,6 +5,7 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import {useNavigate} from  'react-router-dom'
+import { smallImage } from "../util";
 
 const GameDetail=()=>{
     
@@ -41,14 +42,14 @@ const GameDetail=()=>{
                     </div>
                 </div>
                 <div className="mt-20 object-cover">
-                    <img src={game.background_image} alt={game.background_image}/>
+                    <img src={smallImage(game.background_image,1280)} alt={game.background_image}/>
                 </div>
                 <div className="mt-20 mb-10">
                     <p>{game.description_raw}</p>
                 </div>
                 <div className="gallery">
                     {screen.results?.map(screen=>(
-                        <img src={screen.image} key={screen.id} alt={screen.image}/>
+                        <img src={smallImage(screen.image,1280)} key={screen.id} alt={screen.image}/>
                     ))}
                   
                 </div>
