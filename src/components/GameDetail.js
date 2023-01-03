@@ -4,13 +4,27 @@ import React from "react";
 //Redux
 
 import { useSelector } from "react-redux";
+import {useNavigate} from  'react-router-dom'
 
 const GameDetail=()=>{
+    
+    const navigate=useNavigate()
+
+    //Exit Detail
+
+    const exitDetailHandler=(e)=>{
+        const element =e.target
+        if(element.classList.contains("drop-shadow-md")){
+            navigate('/')
+        }
+    }
     //Data
 
-    const {game, screen} =useSelector(state => state.detail)
+    const {game, screen,isLoading} =useSelector(state => state.detail)
     return(
-        <div className="drop-shadow-md shadow-inner fixed overflow-y-scroll w-full min-h-full top-0 left-0 overflow-auto ">
+        <>
+        {!isLoading &&(
+        <div onClick={exitDetailHandler} className=" drop-shadow-md shadow-inner fixed overflow-y-scroll w-full min-h-full top-0 left-0 overflow-hidden ">
             <div className="bg-white  max-w-7xl rounded-2xl left-5 absolute pl-20 pr-20 " >
                 <div className="flex items-center justify-between">
                     <div className="">
@@ -41,7 +55,8 @@ const GameDetail=()=>{
             </div>
                 
         </div>
-    
+        )}
+        </>
 
     )
 
