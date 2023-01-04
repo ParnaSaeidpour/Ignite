@@ -2,7 +2,7 @@
 
 // Base URL
 
-const base_url= "https://api.rawg.io/api/games?key=1ffa8ea614d649bc942025bd5ac29a24"
+const base_url= "https://api.rawg.io/api/games?key="
 
 
 // Getting the date
@@ -46,7 +46,7 @@ export const newGamesURL=()=> `${base_url}${newGames_games}`;
 
 
 //Api
-const apiKey=`1ffa8ea614d649bc942025bd5ac29a24`
+const apiKey=``
 const MODIFY_API=`https://api.rawg.io/api/games/`
 
 //GAME DETAILS
