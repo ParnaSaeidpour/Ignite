@@ -22,13 +22,29 @@ const Home=()=>{
     },[dispatch]);
 
 // Get that data back
-    const {popular,newGames,upcoming}=useSelector((state)=> state.games);
+    const {popular,newGames,upcoming,searched}=useSelector((state)=> state.games);
     
 
 
     return(
         <div className="pt-0 pb-0 pl-20 pr-20">
             {pathId && <GameDetail pathId={pathId}/>}
+            {searched.length ?(
+            <div>
+                <h2 className="xl:font-mono font-bold text-4xl pt-20 pb-20 pl-0 pr-0 my_text_red">Searched Games</h2>
+                    <div className="grid gap-x-10 gap-y-20 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
+                        {searched.map(game=>(
+                            <Games 
+                            name={game.name}
+                            released={game.released}
+                            id={game.id}
+                            image={game.background_image}
+                            key={game.id}
+                            />
+                        ))}
+                </div>
+            </div>
+            ):''}
             <h2 className="xl:font-mono font-bold text-4xl pt-20 pb-20 pl-0 pr-0 my_text_red">Upcoming Games</h2>
                 <div className="grid gap-x-10 gap-y-20 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
                     {upcoming.map(game=>(
