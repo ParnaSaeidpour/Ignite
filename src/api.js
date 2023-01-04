@@ -1,8 +1,5 @@
 
 
-
-
-
 // Base URL
 
 const base_url= "https://api.rawg.io/api/games?key=1ffa8ea614d649bc942025bd5ac29a24"
@@ -59,5 +56,8 @@ export const gameDetailsURL =(game_id)=> `${MODIFY_API}${game_id}.json?key=${api
 // Game Screenshot
 
 export const gameScreenShotURL =(game_id)=> `${MODIFY_API}${game_id}/screenshots?&key=${apiKey}`
+ 
 
+//Search Game
 
+export const searchGameURL =(game_name)=> `${base_url}&search=${game_name}&page_size=9`
